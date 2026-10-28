@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import 'app_drawer.dart';
 
@@ -31,30 +32,50 @@ class WelcomePage extends StatelessWidget {
               image: DecorationImage(
                 image: AssetImage('assets/images/welcome_background.webp'),
                 fit: BoxFit.cover,
-                colorFilter: ColorFilter.mode(Color(0x40FFFFFF), BlendMode.srcOver),
+                colorFilter: ColorFilter.mode(Color(0x40FFFFFF), BlendMode.darken),
               ),
             ),
           ),
-          const Positioned(top: 0, left: 0, right: 0, child: Icon(Icons.landscape, size: 60, color: Colors.white)),
-          const Positioned(
-            top: 100,
+          const Positioned(top: 200, left: 0, right: 0, child: Icon(Icons.landscape, size: 100, color: Colors.white)),
+          Positioned(
+            top: 280,
             left: 0,
             right: 0,
-            child: Text(
-              'Islas Canarias',
-              textAlign: TextAlign.center,
-              style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold, color: Colors.white),
+            child: Stack(
+              alignment: Alignment.center,
+              children: [
+                // Black border
+                Text(
+                  'Islas Canarias',
+                  textAlign: TextAlign.center,
+                  style: GoogleFonts.satisfy(
+                    fontSize: 45,
+                    fontWeight: FontWeight.bold,
+                    foreground: Paint()
+                      ..style = PaintingStyle.stroke
+                      ..strokeWidth = 4
+                      ..color = Colors.black,
+                  ),
+                ),
+
+                // White filling
+                Text(
+                  'Islas Canarias',
+                  textAlign: TextAlign.center,
+                  style: GoogleFonts.satisfy(fontSize: 45, fontWeight: FontWeight.bold, color: Colors.white),
+                ),
+              ],
             ),
           ),
 
-          const Positioned(
-            bottom: 40,
-            left: 0,
-            right: 0,
+          Positioned(
+            bottom: 80,
+            left: 10,
+            right: 10,
             child: Text(
-              'Un paraíso por descubrir',
+              'Las mejores experiencias de cada isla en un solo lugar',
               textAlign: TextAlign.center,
-              style: TextStyle(fontSize: 18, fontStyle: FontStyle.italic, color: Colors.white),
+              style: GoogleFonts.yesevaOne(fontSize: 18, fontWeight: FontWeight.normal, color: Colors.white),
             ),
           ),
         ],
