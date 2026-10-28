@@ -1,8 +1,8 @@
 
-import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 import 'welcome_page.dart';
+import 'portfolio_page.dart';
 
 final GoRouter appRouter = GoRouter(
   initialLocation: '/',
@@ -13,11 +13,7 @@ final GoRouter appRouter = GoRouter(
     ),
     GoRoute(
       path: '/portfolio',
-      builder: (context, state) => const Scaffold(
-        body: Center(
-          child: Text('Portfolio screen'),
-        ),
-      ),
+      builder: (context, state) => const PortfolioPage(),
     ),
   ],
 );
